@@ -1,16 +1,16 @@
 
 # CulturApp
-CulturApp es una aplicación que centraliza información de diferentes locales culturales en el Valle de Aburrá, Colombia. La aplicación permite a los usuarios encontrar información sobre eventos, espectáculos, exposiciones, talleres y otros eventos culturales. Los usuarios también pueden reservar entradas para eventos a través de la web.
+CulturApp es una aplicación web que centraliza información de diferentes locales culturales en el Valle de Aburrá, Colombia. La aplicación permite a los usuarios encontrar información sobre eventos, espectáculos, exposiciones, talleres y otros eventos culturales. Los usuarios también pueden reservar entradas para eventos a través de la web.
 
 ## Objetivos
-Codificar adecuadamente clases abstractas e interfaces.
-Codificar las clases respectivas para cada entidad del modelo de datos.
-Codifica adecuadamente pruebas unitarias.
-Codificar conexiones a bd relacionales.
-Búsqueda de eventos por categorías, fechas y ubicación.
-Información detallada sobre cada evento.
-Reserva de entradas a eventos.
-Notificaciones sobre eventos próximos.
+1. Codificar adecuadamente clases abstractas e interfaces.
+2. Codificar las clases respectivas para cada entidad del modelo de datos.
+3. Codifica adecuadamente pruebas unitarias.
+4. Codificar conexiones a bd relacionales.
+5. Búsqueda de eventos por categorías, fechas y ubicación.
+6. Información detallada sobre cada evento.
+7. Reserva de entradas a eventos.
+8. Notificaciones sobre eventos próximos.
 
 ## Equipo
 - Fabian Zapata
