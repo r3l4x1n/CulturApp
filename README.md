@@ -13,25 +13,25 @@ CulturApp es una aplicación web que centraliza información de diferentes local
 8. Notificaciones sobre eventos próximos.
 
 ## Equipo
-- Fabian Zapata
+- Fabian Zapata:
 nfzapataca@cesde.net
 
-- Santiago Mapura
+- Santiago Mapura:
 santiagomosquera2@gmail.com
 
-- Camilo Arroyave
+- Camilo Arroyave:
 andres1799@gmail.com
 
-- Guatavo Cardona
+- Guatavo Cardona:
 cardona50368@gmail.com
 
 ## Licencia
-La Ruta del Arte está disponible bajo la licencia MIT.
+CulturApp está disponible bajo la licencia MIT. Siéntete libre de utilizarlo y modificarlo de acuerdo a tus necesidades.
 
 ## Instalación:
 
 ## Contribuciones:
-Se aceptan contribuciones a CulturApp.
+Se aceptan contribuciones a CulturApp. Si deseas contribuir a este proyecto siempre eres bienvenido. Puedes plantear problemas, sugerir mejoras o enviar solicitudes de extracción para nuevas características o correcciones de errores.
 
 ## Agradecimientos
 Agradecemos a JJ por su apoyo a este proyecto.
