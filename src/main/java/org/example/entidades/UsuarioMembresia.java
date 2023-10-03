@@ -1,7 +1,7 @@
-package org.example.modelos;
+package org.example.entidades;
 
-import org.example.modelos.interfaces.IAnalitica;
-import org.example.modelos.interfaces.IReporte;
+import org.example.entidades.interfaces.IAnalitica;
+import org.example.entidades.interfaces.IReporte;
 
 public class UsuarioMembresia extends Usuario implements IReporte, IAnalitica<UsuarioMembresia> {
 

@@ -1,4 +1,4 @@
-package org.example.modelos;
+package org.example.entidades;
 
 public class UsuarioPagoXEvento extends Usuario{
     private Double costoPorEvento;

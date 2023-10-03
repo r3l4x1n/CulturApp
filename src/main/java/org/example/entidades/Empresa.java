@@ -1,4 +1,4 @@
-package org.example.modelos;
+package org.example.entidades;
 
 import static org.example.validacion.EmpresaValidacion.*;
 

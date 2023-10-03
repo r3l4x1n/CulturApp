@@ -1,6 +1,6 @@
-package org.example.modelos;
+package org.example.entidades;
 
-import org.example.modelos.interfaces.IReporte;
+import org.example.entidades.interfaces.IReporte;
 
 public class EmpresaCultural extends Empresa implements IReporte {
 

@@ -1,4 +1,4 @@
-package org.example.modelos.interfaces;
+package org.example.entidades.interfaces;
 
 public interface IReporte {
 

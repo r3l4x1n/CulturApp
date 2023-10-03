@@ -1,4 +1,4 @@
-package org.example.modelos;
+package org.example.entidades;
 
 public class EmpresaPrivada extends Empresa {
 
