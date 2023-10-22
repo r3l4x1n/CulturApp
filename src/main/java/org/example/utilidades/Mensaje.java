@@ -2,6 +2,7 @@ package org.example.utilidades;
 
 public enum Mensaje {
     CANTIDADLETRAS("Digite la cantidad de caracteres requidas"),
+    CANTIDADEXCESIVA("La cantidad de caracteres es excesiva"),
     CARACTERESNOMBRE("El nombre no puede contener numeros ni caracteres especiales"),
     CARACTERESNUMERO("La ubicacion no puede contener letras"),
     NUMEROSVALIDOS("La direccion debe estar entre los numeros 1 y 4"),

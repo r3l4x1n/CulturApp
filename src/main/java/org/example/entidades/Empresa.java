@@ -78,7 +78,12 @@ public abstract class Empresa {
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        try {
+            validarDescripcion(descripcion);
+            this.descripcion = descripcion;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public abstract Double calcularCobro(Double costo);

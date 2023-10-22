@@ -78,9 +78,9 @@ public class Usuario {
         return ubicacion;
     }
 
-    public void setUbicacion(String ubicacion) {
+    public void setUbicacion(Integer ubicacion) {
         try{
-            this.ubicacion = validarUbicacion(ubicacion);
+            this.ubicacion = validarUbicacion(String.valueOf(ubicacion));
         }catch(Exception e){
             System.out.println(e.getMessage());
         }

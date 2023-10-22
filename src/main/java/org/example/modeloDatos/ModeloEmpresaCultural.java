@@ -1,26 +1,48 @@
 package org.example.modeloDatos;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
-public class ModeloEmpresaCultural extends ModeloEmpresa{
+public class ModeloEmpresaCultural{
 
-    @Column(name = "entidad",nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "entidad")
     private String entidad;
 
-    @Column(name = "mision",nullable = false)
+    @Column(name = "mision")
     private String mision;
+
+    @Column(name = "email_contacto")
+    private String emailContacto;
+
+    @Column(name = "numero_contacto")
+    private String numeroContacto;
+
+    @OneToOne
+    @MapsId
+    private ModeloEmpresa fk;
+
+
 
     public ModeloEmpresaCultural() {
     }
 
-    public ModeloEmpresaCultural(Integer id, String nit, String nombre, Integer ubicacion, String descripcion, String entidad, String mision) {
-        super(id, nit, nombre, ubicacion, descripcion);
+
+    public ModeloEmpresaCultural(String entidad, String mision,
+                                 String emailContacto, String numeroContacto, ModeloEmpresa fk) {
         this.entidad = entidad;
         this.mision = mision;
+        this.emailContacto = emailContacto;
+        this.numeroContacto = numeroContacto;
+        this.fk = fk;
     }
+
+
 
     public String getEntidad() {
         return entidad;
@@ -36,5 +58,26 @@ public class ModeloEmpresaCultural extends ModeloEmpresa{
 
     public void setMision(String mision) {
         this.mision = mision;
+    }
+
+    public String getEmailContacto() {
+        return emailContacto;
+    }
+
+    public void setEmailContacto(String emailContacto) {this.emailContacto = emailContacto;}
+    public String getNumeroContacto() {
+        return numeroContacto;
+    }
+
+    public void setNumeroContacto(String numeroContacto) {
+        this.numeroContacto = numeroContacto;
+    }
+
+    public ModeloEmpresa getFk() {
+        return fk;
+    }
+
+    public void setFk(ModeloEmpresa fk) {
+        this.fk = fk;
     }
 }

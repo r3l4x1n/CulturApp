@@ -1,9 +1,10 @@
 package org.example.modeloDatos;
 
-
 import jakarta.persistence.*;
 
+
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class ModeloUsuario {
 
     @Id
@@ -11,27 +12,34 @@ public class ModeloUsuario {
     @Column(name = "id_usuario")
     private Integer id;
 
-    @Column(name = "documento",nullable = false)
-    private String documento;
-
-    @Column(name = "nombres",nullable = false)
+    @Column(name = "nombre", nullable = false)
     private String nombres;
 
-    @Column(name = "correo",nullable = false)
+    @Column(name = "documento", nullable = false)
+    private String documento;
+
+    @Column(name = "correo")
     private String correo;
 
-    @Column(name = "ubicacion",nullable = false)
+    @Column(name = "ubicacion")
     private Integer ubicacion;
+
+
+
+
 
     public ModeloUsuario() {
     }
 
-    public ModeloUsuario(Integer id, String documento, String nombres, String correo, Integer ubicacion) {
-        this.id = id;
+    public ModeloUsuario(String documento, String nombres, String correo, Integer ubicacion) {
         this.documento = documento;
         this.nombres = nombres;
         this.correo = correo;
         this.ubicacion = ubicacion;
+    }
+
+    public ModeloUsuario(Integer id) {
+        this.id = id;
     }
 
     public Integer getId() {

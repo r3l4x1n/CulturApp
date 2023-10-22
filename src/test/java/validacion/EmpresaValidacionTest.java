@@ -5,8 +5,7 @@ import org.example.validacion.EmpresaValidacion;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.example.validacion.EmpresaValidacion.validarNit;
-import static org.example.validacion.EmpresaValidacion.validarNombre;
+import static org.example.validacion.EmpresaValidacion.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmpresaValidacionTest {
@@ -45,5 +44,25 @@ class EmpresaValidacionTest {
         Boolean resultado = assertDoesNotThrow(()->validarNombre("Este es un nombre válido juhu!"));
         assertTrue(resultado);
     }
+
+    @Test
+    void validarDescricionConMasDeCientoCincuentaLetras(){
+        Exception resultado = assertThrows(Exception.class,()->validarDescripcion("dewjdewiojdewijakJSKALsajKLSJAKLsA" +
+                "dwldnkeldnkewdnklewndlkewndlewkdnlekndklewndlewkndlkwendklewndlewkndlkwendlenkd" +
+                "lewkndekwldnewkldnlwekndlkwndlwkendlkwendlkewndklend4323432432"));
+        assertEquals(Mensaje.CANTIDADEXCESIVA.getMensaje(),resultado.getMessage());
+    }
+
+    @Test
+    void validarDescripcionValida(){
+        Boolean resultado = assertDoesNotThrow(()->validarDescripcion("Esta es una descripcion válidad" +
+                "para comprobar la efectividad del metodo implementado y su correcto " +
+                "funcionamiento"));
+        assertTrue(resultado);
+    }
+
+
+
+
 
 }
