@@ -1,6 +1,5 @@
 package org.example.modeloDatos;
 
-
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -8,10 +7,9 @@ import java.time.LocalDate;
 @Entity
 public class ModeloReserva {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_reserva")
+    @Column
     private Integer id;
 
     @Column(name = "id_usuario",nullable = false)
@@ -23,7 +21,7 @@ public class ModeloReserva {
     @Column(name = "costo_total",nullable = false)
     private Double costoTotal;
 
-    @Column(name = "local_date",nullable = false)
+    @Column(name = "fecha_reserva",nullable = false)
     private LocalDate fechaReserva;
 
     @Column(name = "cantidad_personas",nullable = false)

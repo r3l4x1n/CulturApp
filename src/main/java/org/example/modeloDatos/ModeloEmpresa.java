@@ -4,6 +4,7 @@ package org.example.modeloDatos;
 import jakarta.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class ModeloEmpresa {
 
     @Id
@@ -11,23 +12,22 @@ public class ModeloEmpresa {
     @Column(name = "id_empresa")
     private Integer id;
 
-    @Column(name = "nit",nullable = false)
+    @Column(name = "nit")
     private String nit;
 
-    @Column(name = "nombre",nullable = false)
+    @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "ubicacion",nullable = false)
+    @Column(name = "ubicacion")
     private Integer ubicacion;
 
-    @Column(name = "descripcion",nullable = false)
+    @Column(name = "descripcion")
     private String descripcion;
 
     public ModeloEmpresa() {
     }
 
-    public ModeloEmpresa(Integer id, String nit, String nombre, Integer ubicacion, String descripcion) {
-        this.id = id;
+    public ModeloEmpresa(String nit, String nombre, Integer ubicacion, String descripcion) {
         this.nit = nit;
         this.nombre = nombre;
         this.ubicacion = ubicacion;

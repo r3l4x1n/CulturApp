@@ -1,25 +1,34 @@
 package org.example.modeloDatos;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
-public class ModeloEmpresaPrivada extends ModeloEmpresa{
+public class ModeloEmpresaPrivada{
 
-    @Column(name = "representante_legal",nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "representante_legal")
     private String representanteLegal;
 
-    @Column(name = "cedula",nullable = false)
+    @Column(name = "cedula")
     private String cedula;
+
+    @MapsId
+    @OneToOne
+    private ModeloEmpresa fk;
+
 
     public ModeloEmpresaPrivada() {
     }
 
-    public ModeloEmpresaPrivada(Integer id, String nit, String nombre, Integer ubicacion, String descripcion, String representanteLegal, String cedula) {
-        super(id, nit, nombre, ubicacion, descripcion);
+    public ModeloEmpresaPrivada(String representanteLegal, String cedula,ModeloEmpresa fk) {
         this.representanteLegal = representanteLegal;
         this.cedula = cedula;
+        this.fk = fk;
     }
 
     public String getRepresentanteLegal() {
@@ -36,5 +45,12 @@ public class ModeloEmpresaPrivada extends ModeloEmpresa{
 
     public void setCedula(String cedula) {
         this.cedula = cedula;
+    }
+
+    public ModeloEmpresa getFk() {
+        return fk;
+    }
+    public void setFk(ModeloEmpresa fk) {
+        this.fk = fk;
     }
 }

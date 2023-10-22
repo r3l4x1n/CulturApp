@@ -2,7 +2,8 @@ package org.example.entidades;
 
 import java.time.LocalDate;
 
-import static org.example.validacion.ReservaValidacion.*;
+import static org.example.validacion.ReservaValidacion.validarCantidadPersonas;
+import static org.example.validacion.ReservaValidacion.validarFecha;
 
 public class Reserva {
     private Integer id;
