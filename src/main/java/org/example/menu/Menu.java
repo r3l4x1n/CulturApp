@@ -26,7 +26,7 @@ public class Menu {
         String costoMensual = "Ingrese el costo mensual que paga el usuario";
         Double cos;
         String invitado = "En caso de que desee referencia a alguien ingrese la cedula, en el caso " +
-                "contrario no ingrese nada";
+                "contrario ingrese el numero cero '0'";
         Integer i;
         String nit = "Ingrese el nit de la empresa";
         String ni;
