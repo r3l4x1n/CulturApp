@@ -1,5 +1,7 @@
 package org.example.modelos;
 
+import static org.example.validacion.UsuarioValidacion.validarNombre;
+
 public class EmpresaPrivada extends Empresa {
 
     private String representanteLegal;
@@ -20,7 +22,12 @@ public class EmpresaPrivada extends Empresa {
     }
 
     public void setRepresentanteLegal(String representanteLegal) {
-        this.representanteLegal = representanteLegal;
+        try{
+            validarNombre(representanteLegal);
+            this.representanteLegal = representanteLegal;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public String getCedula() {

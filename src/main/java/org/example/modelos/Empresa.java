@@ -7,7 +7,9 @@ public abstract class Empresa {
     private String nit;
     private String nombre;
     private Integer ubicacion;
-    private String descripcion;
+    private String mision;
+    private String emailContacto;
+    private String numeroContacto;
 
     public Empresa() {
     }
@@ -17,7 +19,9 @@ public abstract class Empresa {
         this.nit = nit;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
-        this.descripcion = descripcion;
+        this.mision = mision;
+        this.emailContacto = emailContacto;
+        this.numeroContacto = numeroContacto;
     }
 
     @Override
@@ -27,7 +31,9 @@ public abstract class Empresa {
                 ", nit='" + nit + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", ubicacion=" + ubicacion +
-                ", descripcion='" + descripcion + '\'' +
+                ", mision='" + mision + '\'' +
+                ", emailContacto='" + emailContacto + '\'' +
+                ", numeroContacto='" + numeroContacto + '\'' +
                 '}';
     }
 
@@ -73,14 +79,29 @@ public abstract class Empresa {
         this.ubicacion = ubicacion;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getMision() {
+        return mision;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setMision(String descripcion) {
+        this.mision = descripcion;
     }
 
     public abstract Double calcularCobro(Double costo);
 
+    public String getEmailContacto() {
+        return emailContacto;
+    }
+
+    public void setEmailContacto(String emailContacto) {
+        this.emailContacto = emailContacto;
+    }
+
+    public String getNumeroContacto() {
+        return numeroContacto;
+    }
+
+    public void setNumeroContacto(String numeroContacto) {
+        this.numeroContacto = numeroContacto;
+    }
 }
