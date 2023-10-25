@@ -1,5 +1,7 @@
 package org.example.entidades;
 
+import org.example.validacion.UsuarioInvitadoValidacion;
+
 import java.time.LocalDate;
 
 public class UsuarioInvitado {
@@ -8,6 +10,8 @@ public class UsuarioInvitado {
     private String cedula;
     private LocalDate fechaInvitacion;
     private LocalDate fechaFinalizacion;
+
+    UsuarioInvitadoValidacion usuarioInvitadoValidacion = new UsuarioInvitadoValidacion();
 
     public UsuarioInvitado() {
     }
@@ -34,7 +38,13 @@ public class UsuarioInvitado {
     }
 
     public void setCedula(String cedula) {
-        this.cedula = cedula;
+
+        try{
+            this.usuarioInvitadoValidacion.validarCedulaInvitado(cedula);
+            this.cedula = cedula;
+        }catch (Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public LocalDate getFechaInvitacion() {

@@ -3,6 +3,7 @@ package org.example.entidades;
 public class UsuarioPagoXEvento extends Usuario{
     private Double costoPorEvento;
 
+
     public UsuarioPagoXEvento() {
     }
 
@@ -19,5 +20,13 @@ public class UsuarioPagoXEvento extends Usuario{
         this.costoPorEvento = costoPorEvento;
     }
 
-    public void calcularDescuento(){}
+
+    //ESTE METODO LO AGREGO PARA CALCULAR DESCUENTO DE USUARIOXEVENTO
+    public Double calcularDescuento(Oferta oferta){
+        if (oferta != null && oferta.isAsociadaEmpresaCultural()) {
+            return oferta.getCostoPersona() * 0.7;
+        } else {
+            return oferta.getCostoPersona();
+        }
+    }
 }
