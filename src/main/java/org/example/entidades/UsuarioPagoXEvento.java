@@ -20,13 +20,7 @@ public class UsuarioPagoXEvento extends Usuario{
         this.costoPorEvento = costoPorEvento;
     }
 
+    public void calcularDescuento(){
 
-    //ESTE METODO LO AGREGO PARA CALCULAR DESCUENTO DE USUARIOXEVENTO
-    public Double calcularDescuento(Oferta oferta){
-        if (oferta != null && oferta.isAsociadaEmpresaCultural()) {
-            return oferta.getCostoPersona() * 0.7;
-        } else {
-            return oferta.getCostoPersona();
-        }
     }
 }

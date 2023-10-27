@@ -4,7 +4,9 @@ import org.example.controladores.ControladorEmpresaCultural;
 import org.example.controladores.ControladorEmpresaPrivada;
 import org.example.controladores.ControladorUsuarioMembresia;
 import org.example.controladores.ControladorUsuarioXEvento;
+import org.example.entidades.Oferta;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Menu {
@@ -27,7 +29,8 @@ public class Menu {
         Double cos;
         String invitado = "En caso de que desee referencia a alguien ingrese la cedula, en el caso " +
                 "contrario ingrese el numero cero '0'";
-        Integer i;
+        //Integer i;
+        String i;
         String nit = "Ingrese el nit de la empresa";
         String ni;
         String descripcion = "Ingrese la descripcion de la empresa";
@@ -67,7 +70,8 @@ public class Menu {
                     System.out.println(costoMensual);
                     cos = scanner.nextDouble();
                     System.out.println(invitado);
-                    i = scanner.nextInt();
+                    //i = scanner.nextInt();
+                    i = scanner.next();
                     controladorUsuarioMembresia.agregarUsuario(n, d, c, u, cos, String.valueOf(i));
                     menu();
                     scanner.close();
@@ -90,7 +94,7 @@ public class Menu {
                     u = scanner.next();
                     System.out.println("Ingrese el costo por evento");
                     Double dd = scanner.nextDouble();
-                    controladorUsuarioXEvento.agregarUsuario(n, d, c, u, dd);
+                    controladorUsuarioXEvento.agregarUsuario(n, d, c, u, dd );
                     menu();
                 }
                 case 4 -> {

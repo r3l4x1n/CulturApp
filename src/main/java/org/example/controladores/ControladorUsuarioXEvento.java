@@ -2,6 +2,8 @@ package org.example.controladores;
 
 
 import com.google.gson.JsonObject;
+import org.example.entidades.EmpresaCultural;
+import org.example.entidades.Oferta;
 import org.example.entidades.UsuarioPagoXEvento;
 import org.example.modeloDatos.ModeloUsuarioXEvento;
 import org.example.servicios.ServicioUsuarioXEvento;
@@ -22,11 +24,16 @@ public class ControladorUsuarioXEvento {
         this.usuarioPagoXEvento.setDocumento(documento);
         this.usuarioPagoXEvento.setCorreo(correo);
         this.usuarioPagoXEvento.setUbicacion(Integer.valueOf(ubicacion));
+
+
         this.usuarioPagoXEvento.setCostoPorEvento(costoPorEvento);
+
 
         this.servicioUsuarioXEvento.registrarUsuario(usuarioPagoXEvento);
 
     }
+
+
 
     public void consultarUsuario(){
         List<ModeloUsuarioXEvento> usuarios = servicioUsuarioXEvento.buscarUsuario();

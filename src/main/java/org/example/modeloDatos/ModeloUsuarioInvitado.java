@@ -23,9 +23,12 @@ public class ModeloUsuarioInvitado {
     public ModeloUsuarioInvitado() {
     }
 
+
+
     public ModeloUsuarioInvitado(String cedula) {
 
-        if("0" != cedula){
+        //"0" != cedula
+        if(!"0".equals(cedula)){
             this.cedula = cedula;
             this.fechaInvitacion = LocalDate.now();
             this.fechaFinalizacion = fechaInvitacion.plusDays(5);

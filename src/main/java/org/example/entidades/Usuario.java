@@ -12,7 +12,7 @@ public class Usuario {
     private String correo;
     private Integer ubicacion;
 
-    UsuarioValidacion usuarioValidacion = new UsuarioValidacion();
+    //
 
     public Usuario() {
     }
@@ -51,7 +51,7 @@ public class Usuario {
     public void setDocumento(String documento) {
 
         try {
-            this.usuarioValidacion.validarDocumento(documento);
+            validarDocumento(documento);
             this.documento = documento;
         }catch (Exception error){
             System.out.println(error.getMessage());

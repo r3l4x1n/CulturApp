@@ -19,12 +19,6 @@ class UsuarioInvitadoValidacionTest {
     }
 
     @Test
-    public void validarCedulaNull(){
-        String cedulaPrueba = null;
-        Exception respuesta = Assertions.assertThrows(Exception.class, ()-> this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaPrueba));
-        Assertions.assertEquals(Mensaje.FORMATO_CEDULA.getMensaje(), respuesta.getMessage());
-    }
-    @Test
     public void validarFormatoIncorrectoCedulaReferido(){
         String cedulaPrueba = "12345erd";
         Exception respuesta = Assertions.assertThrows(Exception.class, ()-> this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaPrueba));

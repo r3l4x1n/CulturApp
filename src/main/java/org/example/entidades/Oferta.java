@@ -13,9 +13,6 @@ public class Oferta {
     private Double costoPersona;
     private Integer idEmpresa;
 
-    //AGREGO ESTE ATRIBUTO PARA LLAMARLO EN EL METODO CALCULAR DESCUENTO() EN USUARIOXEVENTO, CON SUS GETTERS Y SETTERS
-    private boolean asociadaEmpresaCultural;
-
     public Oferta() {
     }
 
@@ -27,7 +24,6 @@ public class Oferta {
         this.fechaFin = fechaFin;
         this.costoPersona = costoPersona;
         this.idEmpresa = idEmpresa;
-        this.asociadaEmpresaCultural = asociadaEmpresaCultural;
     }
 
     @Override
@@ -40,7 +36,6 @@ public class Oferta {
                 ", fechaFin=" + fechaFin +
                 ", costoPersona=" + costoPersona +
                 ", idEmpresa=" + idEmpresa +
-                ", asociadaEmpresaCultural=" + asociadaEmpresaCultural +
                 '}';
     }
 
@@ -120,11 +115,4 @@ public class Oferta {
         this.idEmpresa = idEmpresa;
     }
 
-    public boolean isAsociadaEmpresaCultural() {
-        return asociadaEmpresaCultural;
-    }
-
-    public void setAsociadaEmpresaCultural(boolean asociadaEmpresaCultural) {
-        this.asociadaEmpresaCultural = asociadaEmpresaCultural;
-    }
 }

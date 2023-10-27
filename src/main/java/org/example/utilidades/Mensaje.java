@@ -17,9 +17,10 @@ public enum Mensaje {
 
     COSTOSUPERIOREMPRESAS("El costo no puede superar los 220.000 pesos"),
 
-    FORMATO_CEDULA ("El formato de la cedula no es valido y el campo no puede ser nulo"),
+    FORMATO_CEDULA ("El formato de la cedula no es valido"),
 
     LONGITUD_CEDULA ("La longitud de la cedula no puede ser mayor a 10");
+
     public String mensaje;
 
     Mensaje(String mensaje) {
