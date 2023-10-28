@@ -14,7 +14,7 @@ public class ControladorUsuarioMembresia {
     ServicioUsuarioMembresia servicioUsuarioMembresia = new ServicioUsuarioMembresia();
 
     public void agregarUsuario(String nombre, String documento,
-                                 String correo, String ubicacion, Double cosotMensual,
+                                 String correo, String ubicacion, Double costoMensual,
                                  String cedulaInvitado){
 
         if(!"0".equals(cedulaInvitado)){
@@ -23,7 +23,7 @@ public class ControladorUsuarioMembresia {
             this.usuarioMembresia.setDocumento(documento);
             this.usuarioMembresia.setCorreo(correo);
             this.usuarioMembresia.setUbicacion(Integer.valueOf(ubicacion));
-            this.usuarioMembresia.setCostoMensual(cosotMensual);
+            this.usuarioMembresia.setCostoMensual(costoMensual);
 
 
             this.servicioUsuarioMembresia.registrarUsuario(usuarioMembresia);
@@ -32,7 +32,7 @@ public class ControladorUsuarioMembresia {
             this.usuarioMembresia.setDocumento(documento);
             this.usuarioMembresia.setCorreo(correo);
             this.usuarioMembresia.setUbicacion(Integer.valueOf(ubicacion));
-            this.usuarioMembresia.setCostoMensual(cosotMensual);
+            this.usuarioMembresia.setCostoMensual(costoMensual);
 
 
             this.servicioUsuarioMembresia.registrarUsuario(usuarioMembresia);
