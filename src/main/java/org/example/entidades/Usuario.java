@@ -1,6 +1,8 @@
 package org.example.entidades;
 
 
+import org.example.validacion.UsuarioValidacion;
+
 import static org.example.validacion.UsuarioValidacion.*;
 
 public class Usuario {
@@ -9,6 +11,8 @@ public class Usuario {
     private String nombres;
     private String correo;
     private Integer ubicacion;
+
+    //
 
     public Usuario() {
     }
@@ -45,7 +49,13 @@ public class Usuario {
     }
 
     public void setDocumento(String documento) {
-        this.documento = documento;
+
+        try {
+            validarDocumento(documento);
+            this.documento = documento;
+        }catch (Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public String getNombres () {

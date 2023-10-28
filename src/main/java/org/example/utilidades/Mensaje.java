@@ -14,7 +14,13 @@ public enum Mensaje {
     CANPERRESERVA("El numero de personas por reserva no puede ser mayor a 4 o menor que 0"),
     TOPENEGATIVO("El valor no puede ser negativo"),
     TOPEPOSITIVO("El valor del pago no puede superar los 100.000 pesos"),
-    COSTOSUPERIOREMPRESAS("El costo no puede superar los 220.000 pesos");
+
+    COSTOSUPERIOREMPRESAS("El costo no puede superar los 220.000 pesos"),
+
+    FORMATO_CEDULA ("El formato de la cedula no es valido"),
+
+    LONGITUD_CEDULA ("La longitud de la cedula no puede ser mayor a 10");
+
     public String mensaje;
 
     Mensaje(String mensaje) {

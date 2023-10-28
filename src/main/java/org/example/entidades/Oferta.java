@@ -16,7 +16,7 @@ public class Oferta {
     public Oferta() {
     }
 
-    public Oferta(Integer id, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, Double costoPersona, Integer idEmpresa) {
+    public Oferta(Integer id, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, Double costoPersona, Integer idEmpresa,Boolean asociadaEmpresaCultural) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -114,4 +114,5 @@ public class Oferta {
     public void setIdEmpresa(Integer idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
+
 }

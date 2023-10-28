@@ -17,17 +17,29 @@ public class ControladorUsuarioMembresia {
                                  String correo, String ubicacion, Double cosotMensual,
                                  String cedulaInvitado){
 
+        if(!"0".equals(cedulaInvitado)){
+            this.usuarioMembresia.setCedulaInvitado(cedulaInvitado);
+            this.usuarioMembresia.setNombres(nombre);
+            this.usuarioMembresia.setDocumento(documento);
+            this.usuarioMembresia.setCorreo(correo);
+            this.usuarioMembresia.setUbicacion(Integer.valueOf(ubicacion));
+            this.usuarioMembresia.setCostoMensual(cosotMensual);
 
 
-        this.usuarioMembresia.setCedulaInvitado(cedulaInvitado);
-        this.usuarioMembresia.setNombres(nombre);
-        this.usuarioMembresia.setDocumento(documento);
-        this.usuarioMembresia.setCorreo(correo);
-        this.usuarioMembresia.setUbicacion(Integer.valueOf(ubicacion));
-        this.usuarioMembresia.setCostoMensual(cosotMensual);
+            this.servicioUsuarioMembresia.registrarUsuario(usuarioMembresia);
+        }else {
+            this.usuarioMembresia.setNombres(nombre);
+            this.usuarioMembresia.setDocumento(documento);
+            this.usuarioMembresia.setCorreo(correo);
+            this.usuarioMembresia.setUbicacion(Integer.valueOf(ubicacion));
+            this.usuarioMembresia.setCostoMensual(cosotMensual);
 
 
-        this.servicioUsuarioMembresia.registrarUsuario(usuarioMembresia);
+            this.servicioUsuarioMembresia.registrarUsuario(usuarioMembresia);
+        }
+
+
+
 
     }
 

@@ -2,6 +2,7 @@ package validacion;
 
 import org.example.utilidades.Mensaje;
 import org.example.validacion.UsuarioValidacion;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -81,6 +82,33 @@ class UsuarioValidacionTest {
         Integer respuesta = assertDoesNotThrow(()->validarUbicacion("3"));
 
         assertEquals(3,3);
+    }
+
+    @Test
+    public void validarDocumentoNull(){
+        String cedulaPrueba = null;
+        Exception respuesta = Assertions.assertThrows(Exception.class, ()-> this.usuarioValidacion.validarDocumento(cedulaPrueba));
+        Assertions.assertEquals(Mensaje.FORMATO_CEDULA.getMensaje(), respuesta.getMessage());
+    }
+    @Test
+    public void validarFormatoIncorrectoDocumentoUsuario(){
+        String cedulaPrueba = "12345erd";
+        Exception respuesta = Assertions.assertThrows(Exception.class, ()-> this.usuarioValidacion.validarDocumento(cedulaPrueba));
+        Assertions.assertEquals(Mensaje.FORMATO_CEDULA.getMensaje(), respuesta.getMessage());
+    }
+
+    @Test
+    public void validarLongitudDocumentoLargo() {
+        String cedulaPueba = "1234567890123";
+        Exception respuesta = Assertions.assertThrows(Exception.class, ()-> this.usuarioValidacion.validarDocumento(cedulaPueba));
+        Assertions.assertEquals(Mensaje.LONGITUD_CEDULA.getMensaje(), respuesta.getMessage());
+    }
+
+    @Test
+    public void validarFormatoCorrectoDocumentoUsuario(){
+        String cedulaPrueba = "1234567890";
+        Boolean respuesta = Assertions.assertDoesNotThrow(() -> this.usuarioValidacion.validarDocumento(cedulaPrueba));
+        Assertions.assertTrue(respuesta);
     }
 
 }

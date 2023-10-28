@@ -3,6 +3,7 @@ package org.example.entidades;
 public class UsuarioPagoXEvento extends Usuario{
     private Double costoPorEvento;
 
+
     public UsuarioPagoXEvento() {
     }
 
@@ -19,5 +20,7 @@ public class UsuarioPagoXEvento extends Usuario{
         this.costoPorEvento = costoPorEvento;
     }
 
-    public void calcularDescuento(){}
+    public void calcularDescuento(){
+
+    }
 }

@@ -2,6 +2,7 @@ package org.example.entidades;
 
 import org.example.entidades.interfaces.IAnalitica;
 import org.example.entidades.interfaces.IReporte;
+import org.example.validacion.UsuarioInvitadoValidacion;
 
 public class UsuarioMembresia extends Usuario implements IReporte, IAnalitica<UsuarioMembresia> {
 
@@ -9,6 +10,7 @@ public class UsuarioMembresia extends Usuario implements IReporte, IAnalitica<Us
     private String cedulaInvitado;
 
 
+    UsuarioInvitadoValidacion usuarioInvitadoValidacion = new UsuarioInvitadoValidacion();
 
     public UsuarioMembresia() {
     }
@@ -34,7 +36,13 @@ public class UsuarioMembresia extends Usuario implements IReporte, IAnalitica<Us
     }
 
     public void setCedulaInvitado(String cedulaInvitado) {
-        this.cedulaInvitado = cedulaInvitado;
+            try {
+                this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaInvitado);
+                this.cedulaInvitado = cedulaInvitado;
+            } catch (Exception error) {
+                System.out.println(error.getMessage());
+            }
+
     }
 
 

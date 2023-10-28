@@ -33,4 +33,16 @@ public class UsuarioValidacion {
         return true;
     }
 
+    public static Boolean validarDocumento(String cedula)throws Exception{
+        if (cedula == null || !cedula.matches("^[0-9]+$")) {
+            throw new Exception(Mensaje.FORMATO_CEDULA.getMensaje());
+        }
+        if (cedula.length() > 10 || cedula.length() < 5 ) {
+            throw new Exception(Mensaje.LONGITUD_CEDULA.getMensaje());
+        }
+
+        return true;
+
+    }
+
 }
