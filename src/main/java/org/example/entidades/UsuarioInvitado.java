@@ -4,6 +4,10 @@ import org.example.validacion.UsuarioInvitadoValidacion;
 
 import java.time.LocalDate;
 
+/**
+ * Esta clase representa una entidad de usuario invitado que puede acceder al sistema por un período limitado.
+ * El usuario invitado se identifica mediante una cédula y tiene fechas de invitación y finalización asociadas.
+ */
 public class UsuarioInvitado {
 
     private Integer id;
@@ -13,9 +17,21 @@ public class UsuarioInvitado {
 
     UsuarioInvitadoValidacion usuarioInvitadoValidacion = new UsuarioInvitadoValidacion();
 
+
+    /**
+     * Constructor predeterminado de la clase UsuarioInvitado.
+     */
     public UsuarioInvitado() {
     }
 
+    /**
+     * Constructor que crea una instancia de UsuarioInvitado con los datos proporcionados.
+     *
+     * @param id                El identificador único del usuario invitado.
+     * @param cedula            La cédula de identificación del usuario invitado.
+     * @param fechaInvitacion   La fecha de inicio de la invitación.
+     * @param fechaFinalizacion La fecha de finalización de la invitación.
+     */
     public UsuarioInvitado(Integer id,String cedula, LocalDate fechaInvitacion,
                            LocalDate fechaFinalizacion) {
         this.id = id;

@@ -3,6 +3,9 @@ package org.example.modeloDatos;
 
 import jakarta.persistence.*;
 
+/**
+ * Esta clase representa un modelo de datos para una empresa privada y está anotada para su uso con la API de Persistencia de Java (JPA).
+ */
 @Entity
 public class ModeloEmpresaPrivada{
 
@@ -21,10 +24,19 @@ public class ModeloEmpresaPrivada{
     @OneToOne
     private ModeloEmpresa fk;
 
-
+    /**
+     * Constructor por defecto de la clase ModeloEmpresaPrivada.
+     */
     public ModeloEmpresaPrivada() {
     }
 
+    /**
+     * Constructor parametrizado de la clase ModeloEmpresaPrivada.
+     *
+     * @param representanteLegal El nombre del representante legal de la empresa privada.
+     * @param cedula             La cédula del representante legal de la empresa privada.
+     * @param fk                 La empresa asociada a esta información de empresa privada.
+     */
     public ModeloEmpresaPrivada(String representanteLegal, String cedula,ModeloEmpresa fk) {
         this.representanteLegal = representanteLegal;
         this.cedula = cedula;

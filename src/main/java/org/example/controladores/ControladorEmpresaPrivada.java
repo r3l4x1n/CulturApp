@@ -6,13 +6,24 @@ import org.example.modeloDatos.ModeloEmpresaPrivada;
 import org.example.servicios.ServicioEmpresaPrivada;
 
 import java.util.List;
-
+/**
+ * Esta clase representa un controlador para gestionar las operaciones relacionadas con empresas privadas.
+ */
 public class ControladorEmpresaPrivada {
 
     EmpresaPrivada empresaPrivada = new EmpresaPrivada();
     ServicioEmpresaPrivada servicioEmpresaPrivada = new ServicioEmpresaPrivada();
 
-
+    /**
+     * Agrega una empresa privada con la información proporcionada.
+     *
+     * @param nit               El NIT de la empresa.
+     * @param nombre            El nombre de la empresa.
+     * @param ubicacion         La ubicación de la empresa.
+     * @param descripcion       La descripción de la empresa.
+     * @param representanteLegal El representante legal de la empresa.
+     * @param cedula            La cédula del representante legal.
+     */
     public void agregarEmpresa(String nit,String nombre, String ubicacion,
                                String descripcion, String representanteLegal,
                                String cedula) {
@@ -27,6 +38,10 @@ public class ControladorEmpresaPrivada {
 
 
     }
+
+    /**
+     * Consulta y muestra información sobre las empresas privadas registradas.
+     */
 
     public void consultarEmpresa(){
         List<ModeloEmpresaPrivada> empresas = servicioEmpresaPrivada.buscarEmpresa();

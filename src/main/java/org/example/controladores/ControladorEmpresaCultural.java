@@ -6,13 +6,26 @@ import org.example.modeloDatos.ModeloEmpresaCultural;
 import org.example.servicios.ServicioEmpresaCultural;
 
 import java.util.List;
-
+/**
+ * Controlador para gestionar empresas culturales.
+ */
 public class ControladorEmpresaCultural {
 
     EmpresaCultural empresaCultural = new EmpresaCultural();
     ServicioEmpresaCultural servicioEmpresaCultural = new ServicioEmpresaCultural();
 
-
+    /**
+     * Agrega una empresa cultural.
+     *
+     * @param nit NIT de la empresa.
+     * @param nombre Nombre de la empresa.
+     * @param ubicacion Ubicación de la empresa.
+     * @param descripcion Descripción de la empresa.
+     * @param entidad Entidad a la que pertenece la empresa.
+     * @param emailContacto Correo electrónico de contacto.
+     * @param numeroContacto Número de contacto.
+     * @param mision Misión de la empresa.
+     */
     public void agregarEmpresa(String nit,String nombre, String ubicacion,
                                String descripcion, String entidad, String emailContacto,
                                String numeroContacto, String mision){
@@ -29,7 +42,9 @@ public class ControladorEmpresaCultural {
 
 
     }
-
+    /**
+     * Consulta y muestra información de empresas culturales.
+     */
     public void consultarEmpresa(){
         List<ModeloEmpresaCultural> empresas = servicioEmpresaCultural.buscarEmpresa();
         JsonObject jsonObject = new JsonObject();

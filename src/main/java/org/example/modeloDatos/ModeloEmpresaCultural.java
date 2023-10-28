@@ -3,6 +3,9 @@ package org.example.modeloDatos;
 
 import jakarta.persistence.*;
 
+/**
+ * Esta clase representa un modelo de datos para una empresa cultural y está anotada para su uso con la API de Persistencia de Java (JPA).
+ */
 @Entity
 public class ModeloEmpresaCultural{
 
@@ -27,12 +30,21 @@ public class ModeloEmpresaCultural{
     @MapsId
     private ModeloEmpresa fk;
 
-
-
+    /**
+     * Constructor por defecto de la clase ModeloEmpresaCultural.
+     */
     public ModeloEmpresaCultural() {
     }
 
-
+    /**
+     * Constructor parametrizado de la clase ModeloEmpresaCultural.
+     *
+     * @param entidad        El nombre de la entidad a la que pertenece la empresa cultural.
+     * @param mision         La misión de la empresa cultural.
+     * @param emailContacto  El correo electrónico de contacto de la empresa cultural.
+     * @param numeroContacto El número de contacto de la empresa cultural.
+     * @param fk             La empresa asociada a esta información cultural.
+     */
     public ModeloEmpresaCultural(String entidad, String mision,
                                  String emailContacto, String numeroContacto, ModeloEmpresa fk) {
         this.entidad = entidad;

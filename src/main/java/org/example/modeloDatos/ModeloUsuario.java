@@ -2,7 +2,9 @@ package org.example.modeloDatos;
 
 import jakarta.persistence.*;
 
-
+/**
+ * Esta clase representa un modelo de datos para un usuario y está anotada para su uso con la API de Persistencia de Java (JPA).
+ */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class ModeloUsuario {
@@ -24,13 +26,20 @@ public class ModeloUsuario {
     @Column(name = "ubicacion")
     private Integer ubicacion;
 
-
-
-
-
+    /**
+     * Constructor por defecto de la clase ModeloUsuario.
+     */
     public ModeloUsuario() {
     }
 
+    /**
+     * Constructor de la clase ModeloUsuario con parámetros.
+     *
+     * @param documento  Documento de identificación del usuario.
+     * @param nombres    Nombres del usuario.
+     * @param correo     Correo electrónico del usuario.
+     * @param ubicacion  Ubicación del usuario.
+     */
     public ModeloUsuario(String documento, String nombres, String correo, Integer ubicacion) {
         this.documento = documento;
         this.nombres = nombres;

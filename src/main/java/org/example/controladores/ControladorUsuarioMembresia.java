@@ -7,12 +7,25 @@ import org.example.servicios.ServicioUsuarioMembresia;
 
 import java.util.List;
 
+/**
+ * Esta clase representa un controlador para gestionar las operaciones relacionadas con usuarios de membresía.
+ */
 public class ControladorUsuarioMembresia {
 
     UsuarioMembresia usuarioMembresia = new UsuarioMembresia();
 
     ServicioUsuarioMembresia servicioUsuarioMembresia = new ServicioUsuarioMembresia();
 
+    /**
+     * Agrega un usuario de membresía con la información proporcionada.
+     *
+     * @param nombre          El nombre del usuario de membresía.
+     * @param documento       El documento de identificación del usuario.
+     * @param correo          El correo electrónico del usuario.
+     * @param ubicacion       La ubicación del usuario (puede ser un código o una descripción).
+     * @param cosotMensual    El costo mensual de la membresía.
+     * @param cedulaInvitado  La cédula del invitado (si no es un invitado, utilizar "0").
+     */
     public void agregarUsuario(String nombre, String documento,
                                  String correo, String ubicacion, Double cosotMensual,
                                  String cedulaInvitado){
@@ -25,7 +38,6 @@ public class ControladorUsuarioMembresia {
             this.usuarioMembresia.setUbicacion(Integer.valueOf(ubicacion));
             this.usuarioMembresia.setCostoMensual(cosotMensual);
 
-
             this.servicioUsuarioMembresia.registrarUsuario(usuarioMembresia);
         }else {
             this.usuarioMembresia.setNombres(nombre);
@@ -34,14 +46,13 @@ public class ControladorUsuarioMembresia {
             this.usuarioMembresia.setUbicacion(Integer.valueOf(ubicacion));
             this.usuarioMembresia.setCostoMensual(cosotMensual);
 
-
             this.servicioUsuarioMembresia.registrarUsuario(usuarioMembresia);
         }
-
-
-
-
     }
+
+    /**
+     * Consulta y muestra información detallada sobre los usuarios de membresía registrados.
+     */
 
     public void consultarUsuario() {
         List<ModeloUsuarioMembresia> usuarios = servicioUsuarioMembresia.buscarUsuario();
@@ -58,8 +69,5 @@ public class ControladorUsuarioMembresia {
 
             System.out.println(jsonObject);
         }
-
     }
-
-
 }

@@ -5,6 +5,11 @@ import java.time.LocalDate;
 import static org.example.validacion.ReservaValidacion.validarCantidadPersonas;
 import static org.example.validacion.ReservaValidacion.validarFecha;
 
+/**
+ * Esta clase representa una entidad de reserva para ofertas culturales. Las reservas se asocian a usuarios y ofertas específicas.
+
+ * Una reserva contiene información sobre la cantidad de personas, el costo total y la fecha de la reserva.
+ */
 public class Reserva {
     private Integer id;
     private Integer idUsuario;
@@ -13,9 +18,22 @@ public class Reserva {
     private LocalDate fechaReserva;
     private Integer cantidadPersonas;
 
+    /**
+     * Constructor predeterminado de la clase Reserva.
+     */
     public Reserva() {
     }
 
+    /**
+     * Constructor que crea una instancia de Reserva con los datos proporcionados.
+     *
+     * @param id             El identificador único de la reserva.
+     * @param idUsuario      El identificador del usuario que realiza la reserva.
+     * @param idOferta       El identificador de la oferta asociada a la reserva.
+     * @param costoTotal     El costo total de la reserva.
+     * @param fechaReserva   La fecha en la que se realizó la reserva.
+     * @param cantidadPersonas La cantidad de personas incluidas en la reserva.
+     */
     public Reserva(Integer id, Integer idUsuario, Integer idOferta, Double costoTotal, LocalDate fechaReserva,Integer cantidadPersonas) {
         this.id = id;
         this.idUsuario = idUsuario;

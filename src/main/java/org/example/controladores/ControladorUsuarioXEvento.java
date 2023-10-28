@@ -48,10 +48,5 @@ public class ControladorUsuarioXEvento {
             System.out.println(jsonObject);
 
         }
-
-
     }
-
-
-
 }

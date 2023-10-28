@@ -4,6 +4,10 @@ import org.example.entidades.interfaces.IAnalitica;
 import org.example.entidades.interfaces.IReporte;
 import org.example.validacion.UsuarioInvitadoValidacion;
 
+/**
+ * Esta clase representa una entidad de usuario con membresía que implementa las interfaces IReporte e IAnalitica.
+ * Un usuario con membresía puede generar reportes y realizar análisis de datos.
+ */
 public class UsuarioMembresia extends Usuario implements IReporte, IAnalitica<UsuarioMembresia> {
 
     private Double costoMensual;
@@ -12,9 +16,23 @@ public class UsuarioMembresia extends Usuario implements IReporte, IAnalitica<Us
 
     UsuarioInvitadoValidacion usuarioInvitadoValidacion = new UsuarioInvitadoValidacion();
 
+    /**
+     * Constructor predeterminado de la clase UsuarioMembresia.
+     */
     public UsuarioMembresia() {
     }
 
+    /**
+     * Constructor que crea una instancia de UsuarioMembresia con los datos proporcionados.
+     *
+     * @param id             El identificador único del usuario.
+     * @param documento      El documento de identificación del usuario.
+     * @param nombres        El nombre del usuario.
+     * @param correo         La dirección de correo electrónico del usuario.
+     * @param ubicacion      La ubicación del usuario.
+     * @param costoMensual   El costo mensual de la membresía del usuario.
+     * @param cedulaInvitado La cédula del usuario invitado asociado.
+     */
     public UsuarioMembresia(Integer id, String documento, String nombres,
                             String correo, Integer ubicacion, Double costoMensual,
                             String cedulaInvitado) {

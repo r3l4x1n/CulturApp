@@ -9,8 +9,16 @@ import org.example.modeloDatos.ModeloUsuarioXEvento;
 
 import java.util.List;
 
+/**
+ * Este servicio proporciona métodos para registrar y buscar usuarios que participan en eventos y realizan pagos por evento en la base de datos.
+ */
 public class ServicioUsuarioXEvento {
 
+    /**
+     * Registra un usuario que participa en un evento y realiza un pago por evento en la base de datos.
+     *
+     * @param usuarioPagoXEvento El usuario que se va a registrar.
+     */
     public void registrarUsuario(UsuarioPagoXEvento usuarioPagoXEvento){
         String configuracionPersistencia = "conexionBD";
 
@@ -34,6 +42,12 @@ public class ServicioUsuarioXEvento {
         }
     }
 
+    /**
+     * Convierte una instancia de la clase `UsuarioPagoXEvento` en una instancia de `ModeloUsuarioXEvento`.
+     *
+     * @param usuarioPagoXEvento El usuario que se va a convertir.
+     * @return La instancia de `ModeloUsuarioXEvento` creada a partir del usuario que participa en eventos y realiza pagos por evento.
+     */
     private static ModeloUsuarioXEvento getModeloUsuarioMembresia(UsuarioPagoXEvento usuarioPagoXEvento) {
         ModeloUsuarioXEvento modeloUsuarioXEvento = new ModeloUsuarioXEvento();
         modeloUsuarioXEvento.setFk(new ModeloUsuario(
@@ -47,6 +61,11 @@ public class ServicioUsuarioXEvento {
         return modeloUsuarioXEvento;
     }
 
+    /**
+     * Busca y devuelve una lista de usuarios que participan en eventos y realizan pagos por evento en la base de datos.
+     *
+     * @return Una lista de usuarios encontrados en la base de datos.
+     */
     public List<ModeloUsuarioXEvento> buscarUsuario(){
         String configuracionPersistencia = "conexionBD";
 

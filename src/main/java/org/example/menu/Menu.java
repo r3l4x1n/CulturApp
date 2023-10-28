@@ -9,8 +9,17 @@ import org.example.entidades.Oferta;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+/**
+ * Esta clase representa un menú de opciones para interactuar con la aplicación CulturApp.
+ * Permite registrar usuarios que pagan por membresía, usuarios que pagan por evento,
+ * empresas culturales y empresas privadas, además de consultar los registros existentes.
+ */
 public class Menu {
 
+    /**
+     * Método principal que muestra un menú interactivo y gestiona la interacción del usuario
+     * con la aplicación CulturApp.
+     */
     public static void menu(){
         ControladorUsuarioMembresia controladorUsuarioMembresia = new ControladorUsuarioMembresia();
         ControladorUsuarioXEvento controladorUsuarioXEvento= new ControladorUsuarioXEvento();

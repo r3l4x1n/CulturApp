@@ -3,6 +3,10 @@ package org.example.modeloDatos;
 
 import jakarta.persistence.*;
 
+/**
+ * Esta clase representa un modelo básico para una entidad llamada "Empresa" en una base de datos.
+ * Está anotada para ser utilizada con la API de Persistencia de Java (JPA).
+ */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class ModeloEmpresa {
@@ -24,9 +28,21 @@ public class ModeloEmpresa {
     @Column(name = "descripcion")
     private String descripcion;
 
+
+    /**
+     * Constructor por defecto para la clase ModeloEmpresa.
+     */
     public ModeloEmpresa() {
     }
 
+    /**
+     * Constructor parametrizado para la clase ModeloEmpresa.
+     *
+     * @param nit         El NIT (Número de Identificación Tributaria) de la empresa.
+     * @param nombre      El nombre de la empresa.
+     * @param ubicacion   La ubicación de la empresa.
+     * @param descripcion Una descripción de la empresa.
+     */
     public ModeloEmpresa(String nit, String nombre, Integer ubicacion, String descripcion) {
         this.nit = nit;
         this.nombre = nombre;

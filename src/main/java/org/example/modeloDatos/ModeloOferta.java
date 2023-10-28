@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+
+/**
+ * Esta clase representa un modelo de datos para una oferta y está anotada para su uso con la API de Persistencia de Java (JPA).
+ */
 @Entity
 public class ModeloOferta {
 
