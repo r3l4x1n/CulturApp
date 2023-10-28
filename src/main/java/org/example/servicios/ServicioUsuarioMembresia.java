@@ -10,8 +10,16 @@ import org.example.modeloDatos.ModeloUsuarioMembresia;
 
 import java.util.List;
 
+/**
+ * Este servicio proporciona métodos para registrar y buscar usuarios con membresía en la base de datos.
+ */
 public class ServicioUsuarioMembresia {
 
+    /**
+     * Registra un usuario con membresía en la base de datos.
+     *
+     * @param usuarioMembresia El usuario con membresía que se va a registrar.
+     */
     public void registrarUsuario(UsuarioMembresia usuarioMembresia){
         String configuracionPersistencia = "conexionBD";
 
@@ -40,6 +48,12 @@ public class ServicioUsuarioMembresia {
         }
     }
 
+    /**
+     * Convierte una instancia de la clase `UsuarioMembresia` en una instancia de `ModeloUsuarioMembresia`.
+     *
+     * @param usuarioMembresia El usuario con membresía que se va a convertir.
+     * @return La instancia de `ModeloUsuarioMembresia` creada a partir del usuario con membresía.
+     */
     private static ModeloUsuarioMembresia getModeloUsuarioMembresia(UsuarioMembresia usuarioMembresia) {
         ModeloUsuarioMembresia modeloUsuarioMembresia = new ModeloUsuarioMembresia();
         modeloUsuarioMembresia.setFk(new ModeloUsuario(
@@ -56,6 +70,11 @@ public class ServicioUsuarioMembresia {
         return modeloUsuarioMembresia;
     }
 
+    /**
+     * Busca y devuelve una lista de usuarios con membresía en la base de datos.
+     *
+     * @return Una lista de usuarios con membresía encontrados en la base de datos.
+     */
     public List<ModeloUsuarioMembresia> buscarUsuario(){
         String configuracionPersistencia = "conexionBD";
 

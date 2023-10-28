@@ -13,24 +13,34 @@ class EmpresaValidacionTest {
     EmpresaValidacion empresaValidacion;
 
     @BeforeEach
-    void configurarPruebaLocal(){
-        this.empresaValidacion = new EmpresaValidacion();
+    void configurarPruebaLocal(){ empresaValidacion = new EmpresaValidacion(); }
+
+    @Test
+    public void ValidarNitaNull() {
+        Exception resultado = assertThrows(Exception.class, () -> validarNit(null));
+        assertEquals(Mensaje.CARACTERESNIT.getMensaje(), resultado.getMessage());
     }
 
     @Test
     void validarNitMenorDiezDigitos(){
-        Exception resultado = assertThrows(Exception.class,()->validarNit("aw12903"));
+        Exception resultado = assertThrows(Exception.class,()->validarNit("12903"));
         assertEquals(Mensaje.CARACTERESNIT.getMensaje(),resultado.getMessage());
     }
     @Test
     void validarNitMayorDiezDigitos(){
-        Exception resultado = assertThrows(Exception.class,()->validarNit("aw1dewedq34234324322903"));
+        Exception resultado = assertThrows(Exception.class,()->validarNit("123456789012"));
         assertEquals(Mensaje.CARACTERESNIT.getMensaje(),resultado.getMessage());
     }
     @Test
     void validarNitValido(){
-        Boolean resultado = assertDoesNotThrow(()->validarNit("123456789h"));
+        Boolean resultado = assertDoesNotThrow(()->validarNit("1234567890"));
         assertTrue(resultado);
+    }
+
+    @Test
+    void validarNombrePorFallaPorNumerosEnNombre(){
+        Exception resultado = assertThrows(Exception.class,()-> validarNombre("Santiago1234"));
+        assertEquals(Mensaje.CARACTERESNOMBRE.getMensaje(),resultado.getMessage());
     }
 
     @Test
@@ -40,10 +50,17 @@ class EmpresaValidacionTest {
     }
 
     @Test
+    void validarNombrePorCaracteresEspeciales() {
+        Exception resultado = assertThrows(Exception.class, () -> validarNombre("Nombre@Especial"));
+        assertEquals(Mensaje.CARACTERESNOMBRE.getMensaje(), resultado.getMessage());
+    }
+
+    @Test
     void validarNombreValido(){
-        Boolean resultado = assertDoesNotThrow(()->validarNombre("Este es un nombre válido juhu!"));
+        Boolean resultado = assertDoesNotThrow(()->validarNombre("Este es un nombre válido juhu"));
         assertTrue(resultado);
     }
+
 
     @Test
     void validarDescricionConMasDeCientoCincuentaLetras(){
@@ -60,9 +77,5 @@ class EmpresaValidacionTest {
                 "funcionamiento"));
         assertTrue(resultado);
     }
-
-
-
-
 
 }

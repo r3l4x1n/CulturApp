@@ -3,6 +3,9 @@ package org.example.modeloDatos;
 
 import jakarta.persistence.*;
 
+/**
+ * Esta clase representa un modelo de datos para una membresía de usuario y está anotada para su uso con la API de Persistencia de Java (JPA).
+ */
 @Entity
 public class ModeloUsuarioMembresia {
 
@@ -30,10 +33,19 @@ public class ModeloUsuarioMembresia {
     @JoinColumn(name = "fk_invitado", referencedColumnName = "id_cedula")
     private ModeloUsuarioInvitado modeloUsuarioInvitado;
 
-
+    /**
+     * Constructor por defecto de la clase ModeloUsuarioMembresia.
+     */
     public ModeloUsuarioMembresia() {
     }
 
+    /**
+     * Constructor de la clase ModeloUsuarioMembresia con parámetros.
+     *
+     * @param costoMensual           Costo mensual de la membresía de usuario.
+     * @param modeloUsuarioInvitado Usuario invitado asociado a la membresía.
+     * @param fk                     Usuario asociado a la membresía.
+     */
     public ModeloUsuarioMembresia(Double costoMensual, ModeloUsuarioInvitado modeloUsuarioInvitado, ModeloUsuario fk) {
 
         this.costoMensual = costoMensual;

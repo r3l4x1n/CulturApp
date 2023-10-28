@@ -5,6 +5,11 @@ import org.example.validacion.UsuarioValidacion;
 
 import static org.example.validacion.UsuarioValidacion.*;
 
+/**
+ * Esta clase representa una entidad de usuario. Un usuario puede ser cualquier persona que utiliza el sistema
+ * y se identifica por un documento, como una cédula de identidad o un pasaporte. La clase proporciona métodos para
+ * validar y gestionar los datos del usuario.
+ */
 public class Usuario {
     private Integer id;
     private String documento;
@@ -13,10 +18,20 @@ public class Usuario {
     private Integer ubicacion;
 
     //
-
+    /**
+     * Constructor predeterminado de la clase Usuario.
+     */
     public Usuario() {
     }
 
+    /**
+     * Constructor que crea una instancia de Usuario con los datos proporcionados.
+     * @param id        El identificador único del usuario.
+     * @param documento El documento de identificación del usuario.
+     * @param nombres   Los nombres del usuario.
+     * @param correo    El correo electrónico del usuario.
+     * @param ubicacion La ubicación del usuario.
+     */
     public Usuario(Integer id, String documento, String nombres , String correo, Integer ubicacion) {
         this.id = id;
         this.documento = documento;

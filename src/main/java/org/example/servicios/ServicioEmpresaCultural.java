@@ -9,8 +9,16 @@ import org.example.modeloDatos.ModeloEmpresaCultural;
 
 import java.util.List;
 
+/**
+ * Este servicio proporciona métodos para registrar y buscar empresas culturales en la base de datos.
+ */
 public class ServicioEmpresaCultural {
 
+    /**
+     * Registra una empresa cultural en la base de datos.
+     *
+     * @param empresaCultural La empresa cultural que se va a registrar.
+     */
     public void registrarEmpresa(EmpresaCultural empresaCultural){
         String configuracionPersistencia = "conexionBD";
 
@@ -35,6 +43,12 @@ public class ServicioEmpresaCultural {
         }
     }
 
+    /**
+     * Convierte una instancia de la clase `EmpresaCultural` en una instancia de `ModeloEmpresaCultural`.
+     *
+     * @param empresaCultural La empresa cultural que se va a convertir.
+     * @return La instancia de `ModeloEmpresaCultural` creada a partir de la empresa cultural.
+     */
     private static ModeloEmpresaCultural getModeloEmpresaCultural(EmpresaCultural empresaCultural) {
         ModeloEmpresaCultural modeloEmpresaCultural = new ModeloEmpresaCultural();
         modeloEmpresaCultural.setFk(new ModeloEmpresa(
@@ -53,6 +67,11 @@ public class ServicioEmpresaCultural {
         return modeloEmpresaCultural;
     }
 
+    /**
+     * Busca y devuelve una lista de empresas culturales en la base de datos.
+     *
+     * @return Una lista de empresas culturales encontradas en la base de datos.
+     */
     public List<ModeloEmpresaCultural> buscarEmpresa(){
         String configuracionPersistencia = "conexionBD";
 

@@ -1,5 +1,8 @@
 package org.example.utilidades;
 
+/**
+ * Este enum proporciona mensajes de error o información que pueden ser utilizados en una aplicación para comunicar situaciones específicas al usuario.
+ */
 public enum Mensaje {
     CANTIDADLETRAS("Digite la cantidad de caracteres requidas"),
     CANTIDADEXCESIVA("La cantidad de caracteres es excesiva"),
@@ -19,10 +22,21 @@ public enum Mensaje {
 
     FORMATO_CEDULA ("El formato de la cedula no es valido"),
 
-    LONGITUD_CEDULA ("La longitud de la cedula no puede ser mayor a 10");
+    LONGITUD_CEDULA ("La longitud de la cedula no puede ser mayor a 10"),
+    CAMPOREQUERIDO ("Debes ingresar la cedula, el campo no puede ir vacio");
 
+    /**
+     * Obtiene el mensaje asociado al valor enum.
+     *
+     * @return El mensaje asociado al valor enum.
+     */
     public String mensaje;
 
+    /**
+     * Establece un mensaje personalizado para el valor enum.
+     *
+     * @param mensaje El mensaje personalizado a establecer.
+     */
     Mensaje(String mensaje) {
         this.mensaje = mensaje;
     }

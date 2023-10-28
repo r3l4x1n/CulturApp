@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+/**
+ * Esta clase representa un modelo de datos para una reserva y está anotada para su uso con la API de Persistencia de Java (JPA).
+ */
 @Entity
 public class ModeloReserva {
 
@@ -27,9 +30,22 @@ public class ModeloReserva {
     @Column(name = "cantidad_personas",nullable = false)
     private Integer cantidadPersonas;
 
+    /**
+     * Constructor por defecto de la clase ModeloReserva.
+     */
     public ModeloReserva() {
     }
 
+    /**
+     * Constructor con parámetros de la clase ModeloReserva.
+     *
+     * @param id              Identificador único de la reserva.
+     * @param idUsuario       Identificador del usuario que realizó la reserva.
+     * @param idOferta        Identificador de la oferta asociada a la reserva.
+     * @param costoTotal      Costo total de la reserva.
+     * @param fechaReserva    Fecha en la que se realizó la reserva.
+     * @param cantidadPersonas Cantidad de personas incluidas en la reserva.
+     */
     public ModeloReserva(Integer id, Integer idUsuario, Integer idOferta, Double costoTotal, LocalDate fechaReserva, Integer cantidadPersonas) {
         this.id = id;
         this.idUsuario = idUsuario;

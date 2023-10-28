@@ -7,6 +7,9 @@ import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 
+/**
+ * Esta clase representa un modelo de datos para un usuario invitado y está anotada para su uso con la API de Persistencia de Java (JPA).
+ */
 @Entity
 public class ModeloUsuarioInvitado {
 
@@ -20,11 +23,17 @@ public class ModeloUsuarioInvitado {
     @Column(name = "fecha_finalizacion")
     private LocalDate fechaFinalizacion;
 
+    /**
+     * Constructor por defecto de la clase ModeloUsuarioInvitado.
+     */
     public ModeloUsuarioInvitado() {
     }
 
-
-
+    /**
+     * Constructor de la clase ModeloUsuarioInvitado con un número de cédula.
+     *
+     * @param cedula Número de cédula del usuario invitado. Si es "0", se considera como una invitación nula.
+     */
     public ModeloUsuarioInvitado(String cedula) {
 
         //"0" != cedula

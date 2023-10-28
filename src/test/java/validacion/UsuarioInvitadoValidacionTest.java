@@ -7,37 +7,52 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Clase de pruebas unitarias para validar la clase UsuarioInvitadoValidacion.
+ */
 class UsuarioInvitadoValidacionTest {
 
     UsuarioInvitadoValidacion usuarioInvitadoValidacion;
 
+    /**
+     * Configura el entorno de prueba creando una instancia de UsuarioInvitadoValidacion.
+     */
     @BeforeEach
-    public void configurarPruebasIniciales(){
-        System.out.println("EStoy ejecutando la prueba");
+    public void configurarPruebasIniciales() {
+        System.out.println("Estoy ejecutando la prueba");
         this.usuarioInvitadoValidacion = new UsuarioInvitadoValidacion();
     }
 
+    /**
+     * Prueba que verifica la validación de un formato incorrecto de cédula de referido.
+     */
     @Test
-    public void validarFormatoIncorrectoCedulaReferido(){
+    public void validarFormatoIncorrectoCedulaReferido() {
         String cedulaPrueba = "12345erd";
-        Exception respuesta = Assertions.assertThrows(Exception.class, ()-> this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaPrueba));
+        Exception respuesta = Assertions.assertThrows(Exception.class, () ->
+                this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaPrueba));
         Assertions.assertEquals(Mensaje.FORMATO_CEDULA.getMensaje(), respuesta.getMessage());
     }
 
+    /**
+     * Prueba que verifica la validación de una cédula de referido con longitud larga.
+     */
     @Test
     public void validarLongitudCedulaLarga() {
-        String cedulaPueba = "1234567890123";
-        Exception respuesta = Assertions.assertThrows(Exception.class, ()-> this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaPueba));
+        String cedulaPrueba = "1234567890123";
+        Exception respuesta = Assertions.assertThrows(Exception.class, () ->
+                this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaPrueba));
         Assertions.assertEquals(Mensaje.LONGITUD_CEDULA.getMensaje(), respuesta.getMessage());
     }
 
-
-
+    /**
+     * Prueba que verifica la validación de un formato correcto de cédula de referido.
+     */
     @Test
-    public void validarFormatoCorrectoCedulaReferido(){
+    public void validarFormatoCorrectoCedulaReferido() {
         String cedulaPrueba = "1234567890";
-        Boolean respuesta = Assertions.assertDoesNotThrow(() -> this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaPrueba));
+        Boolean respuesta = Assertions.assertDoesNotThrow(() ->
+                this.usuarioInvitadoValidacion.validarCedulaInvitado(cedulaPrueba));
         Assertions.assertTrue(respuesta);
     }
 }

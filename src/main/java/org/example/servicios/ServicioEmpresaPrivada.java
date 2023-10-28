@@ -9,8 +9,16 @@ import org.example.modeloDatos.ModeloEmpresaPrivada;
 
 import java.util.List;
 
+/**
+ * Este servicio proporciona métodos para registrar y buscar empresas privadas en la base de datos.
+ */
 public class ServicioEmpresaPrivada {
 
+    /**
+     * Registra una empresa privada en la base de datos.
+     *
+     * @param empresaPrivada La empresa privada que se va a registrar.
+     */
     public void registrarEmpresa(EmpresaPrivada empresaPrivada){
         String configuracionPersistencia = "conexionBD";
 
@@ -35,6 +43,12 @@ public class ServicioEmpresaPrivada {
         }
     }
 
+    /**
+     * Convierte una instancia de la clase `EmpresaPrivada` en una instancia de `ModeloEmpresaPrivada`.
+     *
+     * @param empresaPrivada La empresa privada que se va a convertir.
+     * @return La instancia de `ModeloEmpresaPrivada` creada a partir de la empresa privada.
+     */
     private static ModeloEmpresaPrivada getModeloEmpresaCultural(EmpresaPrivada empresaPrivada) {
         ModeloEmpresaPrivada modeloEmpresaPrivada = new ModeloEmpresaPrivada();
         modeloEmpresaPrivada.setFk(new ModeloEmpresa(
@@ -50,6 +64,11 @@ public class ServicioEmpresaPrivada {
         return modeloEmpresaPrivada;
     }
 
+    /**
+     * Busca y devuelve una lista de empresas privadas en la base de datos.
+     *
+     * @return Una lista de empresas privadas encontradas en la base de datos.
+     */
     public List<ModeloEmpresaPrivada> buscarEmpresa(){
         String configuracionPersistencia = "conexionBD";
 
@@ -73,8 +92,5 @@ public class ServicioEmpresaPrivada {
             return null;
         }
     }
-
-
-
 
 }

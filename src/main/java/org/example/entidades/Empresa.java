@@ -2,6 +2,9 @@ package org.example.entidades;
 
 import static org.example.validacion.EmpresaValidacion.*;
 
+/**
+ * Esta es una clase abstracta que representa una entidad genérica de empresa.
+ */
 public abstract class Empresa {
     private Integer id;
     private String nit;
@@ -20,6 +23,11 @@ public abstract class Empresa {
         this.descripcion = descripcion;
     }
 
+    /**
+     * Devuelve una representación en cadena de la empresa.
+     *
+     * @return Una cadena que describe la empresa.
+     */
     @Override
     public String toString() {
         return "Empresa{" +
@@ -86,6 +94,12 @@ public abstract class Empresa {
         }
     }
 
+    /**
+     * Método abstracto para calcular el cobro de la empresa.
+     *
+     * @param costo El costo sobre el cual se realiza el cálculo del cobro.
+     * @return El valor del cobro calculado.
+     */
     public abstract Double calcularCobro(Double costo);
 
 }
