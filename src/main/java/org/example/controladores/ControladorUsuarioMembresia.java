@@ -23,7 +23,7 @@ public class ControladorUsuarioMembresia {
      * @param documento       El documento de identificación del usuario.
      * @param correo          El correo electrónico del usuario.
      * @param ubicacion       La ubicación del usuario (puede ser un código o una descripción).
-     * @param cosotMensual    El costo mensual de la membresía.
+     * @param costoMensual    El costo mensual de la membresía.
      * @param cedulaInvitado  La cédula del invitado (si no es un invitado, utilizar "0").
      */
     public void agregarUsuario(String nombre, String documento,
