@@ -18,23 +18,23 @@ public class Menu {
         ControladorEmpresaPrivada controladorEmpresaPrivada = new ControladorEmpresaPrivada();
         Scanner scanner = new Scanner(System.in);
         String nombre = "Ingrese el nombre";
-        String n;
+        String nombreUsuario;
         String documento = "Ingrese el documento";
-        String d;
+        String documentoUsuario;
         String correo = "Ingrese el correo electronico";
-        String c;
+        String correoUsuario;
         String ubicacion = "Ingrese la ubicacion";
-        String u;
+        String ubicacionUsuario;
         String costoMensual = "Ingrese el costo mensual que paga el usuario";
-        Double cos;
+        Double costoMensualPagado;
         String invitado = "En caso de que desee referencia a alguien ingrese la cedula, en el caso " +
                 "contrario ingrese el numero cero '0'";
-        //Integer i;
-        String i;
+        //Integer invitadoMembresia;
+        String invitadoMembresia;
         String nit = "Ingrese el nit de la empresa";
-        String ni;
+        String nitEmpresa;
         String descripcion = "Ingrese la descripcion de la empresa";
-        String des;
+        String descripcionEmpresa;
 
         Integer opcionMenu;
 
@@ -59,20 +59,20 @@ public class Menu {
                     System.out.println("Ingrese los siguiente datos para registrar el usuario que paga por membresía");
                     System.out.println(nombre);
                     scanner.nextLine();
-                    n = scanner.nextLine();
+                    nombreUsuario = scanner.nextLine();
 
                     System.out.println(documento);
-                    d = scanner.next();
+                    documentoUsuario = scanner.next();
                     System.out.println(correo);
-                    c = scanner.next();
+                    correoUsuario = scanner.next();
                     System.out.println(ubicacion);
-                    u = scanner.next();
+                    ubicacionUsuario = scanner.next();
                     System.out.println(costoMensual);
-                    cos = scanner.nextDouble();
+                    costoMensualPagado = scanner.nextDouble();
                     System.out.println(invitado);
-                    //i = scanner.nextInt();
-                    i = scanner.next();
-                    controladorUsuarioMembresia.agregarUsuario(n, d, c, u, cos, String.valueOf(i));
+                    //invitadoMembresia = scanner.nextInt();
+                    invitadoMembresia = scanner.next();
+                    controladorUsuarioMembresia.agregarUsuario(nombreUsuario, documentoUsuario, correoUsuario, ubicacionUsuario, costoMensualPagado, String.valueOf(invitadoMembresia));
                     menu();
                     scanner.close();
                 }
@@ -85,16 +85,16 @@ public class Menu {
                     System.out.println("Ingrese los siguiente datos para registrar el usuario que paga por evento");
                     System.out.println(nombre);
                     scanner.nextLine();
-                    n = scanner.nextLine();
+                    nombreUsuario = scanner.nextLine();
                     System.out.println(documento);
-                    d = scanner.next();
+                    documentoUsuario = scanner.next();
                     System.out.println(correo);
-                    c = scanner.next();
+                    correoUsuario = scanner.next();
                     System.out.println(ubicacion);
-                    u = scanner.next();
+                    ubicacionUsuario = scanner.next();
                     System.out.println("Ingrese el costo por evento");
-                    Double dd = scanner.nextDouble();
-                    controladorUsuarioXEvento.agregarUsuario(n, d, c, u, dd );
+                    Double costoPorEvento = scanner.nextDouble();
+                    controladorUsuarioXEvento.agregarUsuario(nombreUsuario, documentoUsuario, correoUsuario, ubicacionUsuario, costoPorEvento );
                     menu();
                 }
                 case 4 -> {
@@ -106,23 +106,23 @@ public class Menu {
                     System.out.println("Ingrese los siguientes datos para registrar la empresa cultural");
                     System.out.println(nombre);
                     scanner.nextLine();
-                    n = scanner.nextLine();
+                    nombreUsuario = scanner.nextLine();
                     System.out.println(descripcion);
-                    des = scanner.nextLine();
+                    descripcionEmpresa = scanner.nextLine();
                     System.out.println(nit);
-                    ni = scanner.next();
+                    nitEmpresa = scanner.next();
                     System.out.println(ubicacion);
-                    u = scanner.next();
+                    ubicacionUsuario = scanner.next();
                     System.out.println("Ingrese el nombre de la entidad a la que pertenece");
                     scanner.nextLine();
                     String entidad = scanner.nextLine();
                     System.out.println("Ingrese la misión de su empresa");
                     String mision = scanner.nextLine();
                     System.out.println("Ingrese el email del responsable");
-                    c = scanner.next();
-                    System.out.println("Ingrese el numero de contecto del responsable");
+                    correoUsuario = scanner.next();
+                    System.out.println("Ingrese el numero de contacto del responsable");
                     String numero = scanner.next();
-                    controladorEmpresaCultural.agregarEmpresa(ni, n, u, des, entidad, c, numero, mision);
+                    controladorEmpresaCultural.agregarEmpresa(nitEmpresa, nombreUsuario, ubicacionUsuario, descripcionEmpresa, entidad, correoUsuario, numero, mision);
                     menu();
                 }
                 case 6 -> {
@@ -134,20 +134,20 @@ public class Menu {
                     System.out.println("Ingrese los siguientes datos para registrar la empresa privada");
                     System.out.println(nombre);
                     scanner.nextLine();
-                    n = scanner.nextLine();
+                    nombreUsuario = scanner.nextLine();
                     System.out.println(descripcion);
 
-                    des = scanner.nextLine();
+                    descripcionEmpresa = scanner.nextLine();
                     System.out.println(nit);
-                    ni = scanner.next();
+                    nitEmpresa = scanner.next();
                     System.out.println(ubicacion);
                     scanner.nextLine();
-                    u = scanner.nextLine();
+                    ubicacionUsuario = scanner.nextLine();
                     System.out.println("Ingrese el nombre del representante legal");
-                    String rep = scanner.nextLine();
+                    String representante = scanner.nextLine();
                     System.out.println("Ingrese la cedula del representante legal");
                     String cedula = scanner.next();
-                    controladorEmpresaPrivada.agregarEmpresa(ni, n, u, des, rep, cedula);
+                    controladorEmpresaPrivada.agregarEmpresa(nitEmpresa, nombreUsuario, ubicacionUsuario, descripcionEmpresa, representante, cedula);
                     menu();
                 }
                 case 8 -> {
